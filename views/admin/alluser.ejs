@@ -1,0 +1,35 @@
+<%- include('../partial/header'); -%>
+<%- include('../partial/navbar'); -%>
+<div class="container-fluid">
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">id</th>
+            <th scope="col" width="40%">Biodata</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            <% user.forEach(function(list) { %>
+                <tr>
+                    <td><%= list.name %></td>
+                    <td><%= list.user_id %></td>
+                    <td><%= list.description %></td>
+                    <td>
+                        <form action="/admin/user/delete" method="post">
+                            <input type="hidden" name="userID" value="<%= list.user_id %>">
+                            <input type="submit" name="deleteUser" id="" class="btn btn-danger btn-sm" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+            
+        </tbody>
+    </table>
+
+
+    
+</div>
+<%- include('../partial/footer'); -%>

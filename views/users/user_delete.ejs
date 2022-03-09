@@ -1,0 +1,30 @@
+<%- include('../partial/header'); -%>
+<%- include('../partial/navbar'); -%>
+    
+  <div class="container">
+    <a href="/" class="btn btn-info btn-close"></a>
+    <form action="/user_delete" method="post">
+
+      <div class="row mt-lg-4">
+        <div class="col-4">
+          <p>Enter your Username and password to continue!</p>
+          <input type="text" class="form-control" placeholder="Enter username" name="username">
+        </div>
+      </div>
+
+      <div class="row mt-lg-4">
+        <div class="col-4">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+        </div>
+      </div>
+
+      <div class="row mt-lg-4">
+        <div class="col-4">
+            <button type="submit" class="btn btn-primary">Goodbye!</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <%- include('../partial/footer'); -%>
