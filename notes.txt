@@ -1,0 +1,18 @@
+npx sequelize model:generate --name User --attributes username:string,email:string,password:string
+User: username, email, password
+
+npx sequelize model:generate --name Room --attributes ownerID:integer,date:date,playerOneId:integer,playerTwoId:integer,playerOneScore:integer,playerTwoScore:integer
+npx sequelize-cli seed:generate --name UserAdmin
+
+npx sequelize model:generate --name Room --attributes playerOneId:integer,playerTwoId:integer,playerOneMove:array:string,playerTwoMove:array:string,roundResult:array:string
+npx sequelize migration:generate --name add-role 
+
+
+Room: ownerID:integer, date:date, playerOneId:integer, playerTwoId:integer, playerOneMove:array
+    idPlayer1:integer, idPlayer2: integer, 
+    tipe" yang pake array string: player1Move, player2Move, roundResult
+
+npx sequelize-cli db:migrate:undo --name 20211212145632-create-room.js
+
+
+npm i jsonwebtoken passport passport-jwt express-flash express-session
